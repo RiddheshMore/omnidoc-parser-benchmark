@@ -65,6 +65,16 @@ pip install llama-index-core llama-parse
 deactivate
 ```
 
+#### **Evaluation (Required for Scoring)**
+```bash
+python3 -m venv venv_eval
+source venv_eval/bin/activate
+# Install OmniDocBench requirements and plotting tools
+pip install -r OmniDocBench/requirements.txt
+pip install matplotlib pandas
+deactivate
+```
+
 ### 3. Configure
 Create a `.env` file for LlamaParser:
 ```bash
