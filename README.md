@@ -3,7 +3,7 @@
 This repository contains the evaluation scripts and results for benchmarking **Marker**, **Docling**, and **LlamaParser** on the [OmniDocBench](https://github.com/opendatalab/OmniDocBench) dataset.
 
 ## Objective
-Identify the most accurate and efficient PDF parser for complex documents (tables, formulas, multi-column layouts)
+Identify the most accurate and efficient PDF parser for complex documents (tables, formulas, multi-column layouts), specifically for extracting **soil analysis data**.
 
 ## Key Findings
 | Parser | Text Accuracy (Edit Dist) | Table Structure (TEDS) | Speed (18 files) |
@@ -19,6 +19,15 @@ Identify the most accurate and efficient PDF parser for complex documents (table
 *   `configs/`: OmniDocBench configuration files.
 *   `run_benchmark.sh`: Main execution script (handles virtual environments).
 *   `run_eval.sh`: Scoring script.
+
+## Data Setup
+The benchmark requires the **OmniDocBench** dataset.
+
+1.  Clone the official repository (contains the data in `demo_data/`):
+    ```bash
+    git clone https://github.com/opendatalab/OmniDocBench.git
+    ```
+2.  Ensure it is located inside this project folder so the scripts can find `OmniDocBench/demo_data`.
 
 ## Setup & Installation
 
