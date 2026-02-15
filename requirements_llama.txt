@@ -1,0 +1,3 @@
+llama-index-core
+llama-parse
+python-dotenv
