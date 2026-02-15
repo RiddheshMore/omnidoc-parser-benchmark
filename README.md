@@ -10,8 +10,9 @@ Identify the most accurate and efficient PDF parser for complex documents (table
 | :--- | :--- | :--- | :--- |
 | **Marker** | **93.5%** | **80.0%** | ~21s/file |
 | **Docling** | 88.3% | 69.7% | **~2s/file** |
-| **Llama** | 36.6% | 30.7% | ~26s/file |
+| **Llama (Fast)** | 36.6% | 30.7% | ~26s/file |
 
+**Recommendation**: Use **Marker** for high-precision extraction of soil data tables.
 
 ## Structure
 *   `scripts/`: Python adapters for each parser.
@@ -60,6 +61,16 @@ Create a `.env` file for LlamaParser:
 ```bash
 LLAMA_CLOUD_API_KEY=llx-your-key-here
 ```
+
+## System Requirements
+
+| Component | Minimum | Recommended (for Marker) |
+| :--- | :--- | :--- |
+| **OS** | Linux / macOS | Linux (Ubuntu 22.04+) |
+| **CPU** | 4 Cores | 8 Cores |
+| **RAM** | 8 GB | 16 GB+ |
+| **GPU** | Optional (Docling runs on CPU) | **NVIDIA GPU (8GB+ VRAM)** for Marker speedups |
+| **Storage** | 10 GB (for Dataset) | 20 GB SSD |
 
 ## Run Benchmark
 ```bash
