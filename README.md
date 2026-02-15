@@ -12,7 +12,6 @@ Identify the most accurate and efficient PDF parser for complex documents (table
 | **Docling** | 88.3% | 69.7% | **~2s/file** |
 | **Llama** | 36.6% | 30.7% | ~26s/file |
 
-**Recommendation**: Use **Marker** for high-precision extraction of soil data tables.
 
 ## Structure
 *   `scripts/`: Python adapters for each parser.
