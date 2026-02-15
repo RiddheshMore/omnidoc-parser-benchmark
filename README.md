@@ -27,7 +27,7 @@ The benchmark requires the **OmniDocBench** dataset.
     ```bash
     git clone https://github.com/opendatalab/OmniDocBench.git
     ```
-2.  Ensure it is located inside this project folder so the scripts can find `OmniDocBench/demo_data`.
+2.  **Auto-Conversion**: The benchmark script will automatically convert the demo images to PDFs if they are missing.
 
 ## Setup & Installation
 
