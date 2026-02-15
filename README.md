@@ -10,7 +10,7 @@ Identify the most accurate and efficient PDF parser for complex documents (table
 | :--- | :--- | :--- | :--- |
 | **Marker** | **93.5%** | **80.0%** | ~21s/file |
 | **Docling** | 88.3% | 69.7% | **~2s/file** |
-| **Llama (Fast)** | 36.6% | 30.7% | ~26s/file |
+| **Llama** | 36.6% | 30.7% | ~26s/file |
 
 **Recommendation**: Use **Marker** for high-precision extraction of soil data tables.
 
