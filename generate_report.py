@@ -88,5 +88,51 @@ def main():
     df.to_csv("benchmark_report.csv", index=False)
     print("\nSaved to benchmark_report.csv")
 
+    # Generate Plot
+    try:
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        # Set plot style
+        plt.style.use('ggplot')
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        parsers = df['Parser'].tolist()
+        x = np.arange(len(parsers))
+        width = 0.25
+
+        # Metrics to plot
+        # Text Edit Dist (Lower is better, maybe invert or just plot?)
+        # TEDS (Higher is better)
+        
+        # Parse output to float first (remove N/A)
+        teds = [float(val) if val != 'N/A' else 0 for val in df.get('Table TEDS (Higher=Better)', [])]
+        edit_dist = [float(val) if val != 'N/A' else 0 for val in df.get('Text Edit Dist (Lower=Better)', [])]
+        
+        # Plot bars
+        ax.bar(x - width/2, teds, width, label='Table TEDS (Higher=Better)', color='mediumseagreen')
+        ax.bar(x + width/2, edit_dist, width, label='Text Edit Dist (Lower=Better)', color='salmon')
+
+        ax.set_ylabel('Score')
+        ax.set_title('Benchmark Results: Table TEDS vs Text Accuracy')
+        ax.set_xticks(x)
+        ax.set_xticklabels(parsers)
+        ax.legend()
+        
+        # Add labels
+        for i, v in enumerate(teds):
+            ax.text(i - width/2, v + 0.01, str(round(v, 3)), ha='center', va='bottom', fontsize=9)
+        for i, v in enumerate(edit_dist):
+            ax.text(i + width/2, v + 0.01, str(round(v, 3)), ha='center', va='bottom', fontsize=9)
+
+        plt.tight_layout()
+        plt.savefig("benchmark_chart.png")
+        print("Saved chart to benchmark_chart.png")
+        
+    except ImportError:
+        print("matplotlib not found. Skipping chart generation.")
+    except Exception as e:
+        print(f"Error generating chart: {e}")
+
 if __name__ == "__main__":
     main()

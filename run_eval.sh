@@ -31,5 +31,12 @@ else
 fi
 
 echo "---------------------------------------------------"
+echo "---------------------------------------------------"
+echo "Generating Report..."
+$EVAL_PYTHON generate_report.py
+if [ -f "benchmark_chart.png" ]; then
+    echo "Chart generated: benchmark_chart.png"
+fi
+
 echo "All Evaluations Finished."
 date
