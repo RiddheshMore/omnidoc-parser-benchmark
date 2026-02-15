@@ -33,7 +33,7 @@ if [ -d "OmniDocBench" ]; then
     CONFIG_DIR="$ROOT_DIR/configs"
 
     if [ -f "$CONFIG_DIR/custom_docling.yaml" ]; then
-        $EVAL_PYTHON tools/pdf_validation.py --config "$CONFIG_DIR/custom_docling.yaml"
+        $EVAL_PYTHON pdf_validation.py --config "$CONFIG_DIR/custom_docling.yaml"
         echo "Docling Evaluation Done."
     else
         echo "Config not found: $CONFIG_DIR/custom_docling.yaml"
@@ -42,16 +42,16 @@ if [ -d "OmniDocBench" ]; then
     echo "---------------------------------------------------"
     echo "Evaluating LlamaParser..."
     if [ -f "$CONFIG_DIR/custom_llama.yaml" ]; then
-        $EVAL_PYTHON tools/pdf_validation.py --config "$CONFIG_DIR/custom_llama.yaml"
+        $EVAL_PYTHON pdf_validation.py --config "$CONFIG_DIR/custom_llama.yaml"
         echo "LlamaParser Evaluation Done."
     fi
     
     echo "---------------------------------------------------"
     echo "Evaluating Marker..."
-    # Only evaluate if output exists (check relative to OmniDocBench or ROOT?)
+    # Only evaluate if output exists
     # Marker output is in OmniDocBench/result/marker
     if [ -d "result/marker" ] && [ -f "$CONFIG_DIR/custom_marker.yaml" ]; then
-        $EVAL_PYTHON tools/pdf_validation.py --config "$CONFIG_DIR/custom_marker.yaml"
+        $EVAL_PYTHON pdf_validation.py --config "$CONFIG_DIR/custom_marker.yaml"
         echo "Marker Evaluation Done."
     else
         echo "Marker output or config not found, skipping..."
