@@ -67,7 +67,7 @@ fi
 echo "---------------------------------------------------"
 echo "Generating Report..."
 # generate_report.py expects to run from ROOT_DIR
-$EVAL_PYTHON generate_report.py
+$EVAL_PYTHON scripts/generate_report.py
 
 if [ -f "benchmark_chart.png" ]; then
     echo "Chart generated: benchmark_chart.png"

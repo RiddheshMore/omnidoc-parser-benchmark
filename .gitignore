@@ -1,0 +1,18 @@
+# Environments
+venv_*/
+__pycache__/
+*.pyc
+
+# Data & submodules
+OmniDocBench/
+data/
+
+# Results
+benchmark_chart.png
+benchmark_report.csv
+benchmark_run.log
+
+# IDE
+.vscode/
+.idea/
+.env
